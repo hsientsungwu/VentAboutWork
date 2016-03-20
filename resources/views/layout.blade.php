@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -11,8 +11,9 @@
         <meta property="og:title" content="@yield('title') | Vent About Your Work" />
         <meta property="og:description" content="@yield('description')" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ url() }}" />
-        <meta property="og:image" content="{{ url('/images/fb.png') }}" />
+        <meta property="og:url" content="{{ url()->current() }}" />
+        <meta property="og:image" content="" />
+        
         <title>@yield('title') | Vent About Your Work</title>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 

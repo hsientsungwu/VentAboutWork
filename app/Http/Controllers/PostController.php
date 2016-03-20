@@ -12,6 +12,7 @@ class PostController extends Controller
 {
     public function index() {
     	// display publish form
+    	return view('form');
     }
 
     public function publish() {
