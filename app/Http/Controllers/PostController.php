@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Repositories\PostRepository;
+use App\Http\Requests\PublishPostRequest;
 
 class PostController extends Controller
 {
@@ -15,8 +16,9 @@ class PostController extends Controller
     	return view('form');
     }
 
-    public function publish() {
+    public function publish(PublishPostRequest $request) {
     	// handling post data
+    	dd($request);
     }
 
     public function post() {

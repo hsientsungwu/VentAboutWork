@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', 'PostController@index');
-Route::post('/publish', 'PostController@publish');
-Route::get('/post/{key}', 'PostController@post');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +25,7 @@ Route::get('/post/{key}', 'PostController@post');
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', 'PostController@index');
+	Route::post('/publish', 'PostController@publish');
+	Route::get('/post/{key}', 'PostController@post');
 });

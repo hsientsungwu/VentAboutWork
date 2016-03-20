@@ -7,11 +7,23 @@
 		</div>
 
 		<div class="row">
-			<form class="form-horizontal">
-				<fieldset>
-					<!-- Form Name -->
-					<legend class="text-center">Publish My Message</legend>
+			<div class="col-md-4 col-md-offset-4">
+				@if (count($errors) > 0)
+				    <div class="alert alert-danger">
+				        <ul class="">
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+				@endif
+			</div>
+		</div>
 
+		<div class="row">
+			<form class="form-horizontal" action="/publish" method="POST">
+				<fieldset>
+	
 					<!-- Textarea -->
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="message">Message</label>
@@ -61,8 +73,9 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="submit"></label>
 					  <div class="col-md-8">
-					    <button id="submit" name="submit" class="btn btn-primary">Publish My Vent</button>
-					    <button id="cancel" name="cancel" class="btn btn-inverse">Change My Mind</button>
+					  	{{ csrf_field() }}
+					    <button id="submit" type="submit" name="submit" class="btn btn-primary">Publish My Vent</button>
+					    <a href="#" id="cancel" name="cancel" class="btn btn-default">Change My Mind</a>
 					  </div>
 					</div>
 
