@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
+Route::post('/publish', 'PostController@publish');
+Route::get('/post/{key}', 'PostController@post');
 
 /*
 |--------------------------------------------------------------------------
